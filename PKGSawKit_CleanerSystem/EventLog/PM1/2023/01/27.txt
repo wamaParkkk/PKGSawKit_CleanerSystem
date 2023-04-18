@@ -1,0 +1,36 @@
+[2023-01-27, 08:11:54] CH1_AirValve_o : Off
+[2023-01-27, 08:11:54] CH1_WaterValve_1_o : Off
+[2023-01-27, 08:11:54] CH1_WaterValve_2_o : Off
+[2023-01-27, 08:11:54] CH1_BrushClean_WaterValve_o : Off
+[2023-01-27, 08:11:54] CH1_BrushClean_AirValve_o : Off
+[2023-01-27, 08:11:54] Water_Pump_o : Off
+[2023-01-27, 08:11:54] Buzzer_o : On
+[2023-01-27, 08:11:56] Buzzer_o : Off
+[2023-01-27, 08:29:58] [LOG-IN] [000000_Amkor_Master]
+[2023-01-27, 10:09:34] CH1_AirValve_o : Off
+[2023-01-27, 10:09:34] CH1_WaterValve_1_o : Off
+[2023-01-27, 10:09:34] CH1_WaterValve_2_o : Off
+[2023-01-27, 10:09:34] CH1_BrushClean_WaterValve_o : Off
+[2023-01-27, 10:09:34] CH1_BrushClean_AirValve_o : Off
+[2023-01-27, 10:09:34] Water_Pump_o : Off
+[2023-01-27, 10:09:34] Buzzer_o : On
+[2023-01-27, 10:09:35] Buzzer_o : Off
+[2023-01-27, 10:09:40] [LOG-IN] [000000_Amkor_Master]
+[2023-01-27, 10:10:08] CH1_AirValve_o : Off
+[2023-01-27, 10:10:08] CH1_WaterValve_1_o : Off
+[2023-01-27, 10:10:08] CH1_WaterValve_2_o : Off
+[2023-01-27, 10:10:08] CH1_BrushClean_WaterValve_o : Off
+[2023-01-27, 10:10:08] CH1_BrushClean_AirValve_o : Off
+[2023-01-27, 10:10:08] Water_Pump_o : Off
+[2023-01-27, 10:10:08] Buzzer_o : On
+[2023-01-27, 10:10:09] Buzzer_o : Off
+[2023-01-27, 10:10:14] [LOG-IN] [000000_Amkor_Master]
+[2023-01-27, 10:41:09] CH1_AirValve_o : Off
+[2023-01-27, 10:41:09] CH1_WaterValve_1_o : Off
+[2023-01-27, 10:41:09] CH1_WaterValve_2_o : Off
+[2023-01-27, 10:41:09] CH1_BrushClean_WaterValve_o : Off
+[2023-01-27, 10:41:09] CH1_BrushClean_AirValve_o : Off
+[2023-01-27, 10:41:09] Water_Pump_o : Off
+[2023-01-27, 10:41:09] Buzzer_o : On
+[2023-01-27, 10:41:09] Buzzer_o : Off
+[2023-01-27, 10:41:13] [LOG-IN] [000000_Amkor_Master]

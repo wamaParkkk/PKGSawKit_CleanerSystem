@@ -1,0 +1,66 @@
+[2023-03-22, 09:03:10] CH2_AirValve_1_o : Off
+[2023-03-22, 09:03:10] CH2_AirValve_2_o : Off
+[2023-03-22, 09:03:10] CH2_WaterValve_1_o : Off
+[2023-03-22, 09:03:10] CH2_WaterValve_2_o : Off
+[2023-03-22, 09:03:10] CH2_WaterValve_3_o : Off
+[2023-03-22, 09:03:10] CH2_WaterValve_4_o : Off
+[2023-03-22, 09:03:10] CH2_WaterValve_5_o : Off
+[2023-03-22, 09:03:11] FluorescentLamp_o : On
+[2023-03-22, 09:03:16] FluorescentLamp_o : Off
+[2023-03-22, 09:03:33] START THE PROCESS.
+[2023-03-22, 09:03:33] Check the door Close
+[2023-03-22, 09:03:33] CH2_Door_Open_o : Off
+[2023-03-22, 09:03:33] CH2_Door_Close_o : On
+[2023-03-22, 09:03:33] Check the door Close
+[2023-03-22, 09:03:33] CH2_Door_Open_o : Off
+[2023-03-22, 09:03:33] CH2_Door_Close_o : On
+[2023-03-22, 09:03:35] Loading the process recipe file.
+[2023-03-22, 09:03:35] Loading the process recipe file.
+[2023-03-22, 09:03:35] Recipe file was successfully read.
+[2023-03-22, 09:03:35] Recipe name : PM2_Test.csv
+[2023-03-22, 09:03:35] Recipe file was successfully read.
+[2023-03-22, 09:03:35] Recipe name : PM2_Test.csv
+[2023-03-22, 09:03:35] Process Step : 1
+[2023-03-22, 09:03:35] CH2_AirValve_1_o : On
+[2023-03-22, 09:03:35] CH2_AirValve_2_o : On
+[2023-03-22, 09:03:35] CH2_WaterValve_1_o : On
+[2023-03-22, 09:03:35] CH2_AirValve_2_o : On
+[2023-03-22, 09:03:35] CH2_WaterValve_1_o : On
+[2023-03-22, 09:03:35] CH2_WaterValve_2_o : On
+[2023-03-22, 09:03:35] CH2_WaterValve_3_o : On
+[2023-03-22, 09:03:35] CH2_WaterValve_4_o : On
+[2023-03-22, 09:03:35] CH2_WaterValve_4_o : On
+[2023-03-22, 09:03:35] CH2_WaterValve_5_o : On
+[2023-03-22, 09:03:35] START THE CYLINDER MOVING.
+[2023-03-22, 09:03:35] Cylinder : Forward
+[2023-03-22, 09:03:35] Check the process time : 50 sec.
+[2023-03-22, 09:04:06] CH2_AirValve_1_o : Off
+[2023-03-22, 09:04:06] CH2_AirValve_2_o : Off
+[2023-03-22, 09:04:06] CH2_WaterValve_1_o : Off
+[2023-03-22, 09:04:06] CH2_WaterValve_2_o : Off
+[2023-03-22, 09:04:06] CH2_WaterValve_3_o : Off
+[2023-03-22, 09:04:06] CH2_WaterValve_4_o : Off
+[2023-03-22, 09:04:06] CH2_WaterValve_5_o : Off
+[2023-03-22, 09:04:06] Buzzer_o : On
+[2023-03-22, 09:04:12] CH2_AirValve_1_o : Off
+[2023-03-22, 09:04:12] CH2_AirValve_2_o : Off
+[2023-03-22, 09:04:12] CH2_AirValve_2_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_1_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_2_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_3_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_4_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_5_o : Off
+[2023-03-22, 09:04:12] Process has stopped : Abort
+[2023-03-22, 09:04:12] CH2_AirValve_1_o : Off
+[2023-03-22, 09:04:12] CH2_AirValve_2_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_1_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_5_o : Off
+[2023-03-22, 09:04:12] Process has stopped : Abort
+[2023-03-22, 09:04:12] CH2_WaterValve_3_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_4_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_5_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_2_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_3_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_4_o : Off
+[2023-03-22, 09:04:12] CH2_WaterValve_5_o : Off
+[2023-03-22, 09:04:12] Cylinder movement stopped : Abort

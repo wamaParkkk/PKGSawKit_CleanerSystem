@@ -1,0 +1,33 @@
+[2023-03-10, 08:46:55] Water_Pump_o : Off
+[2023-03-10, 08:46:55] CH1_AirValve_o : Off
+[2023-03-10, 08:46:55] CH1_WaterValve_1_o : Off
+[2023-03-10, 08:46:55] CH1_WaterValve_2_o : Off
+[2023-03-10, 08:46:55] CH1_BrushClean_WaterValve_o : Off
+[2023-03-10, 08:46:55] CH1_BrushClean_AirValve_o : Off
+[2023-03-10, 08:46:55] Buzzer_o : On
+[2023-03-10, 08:46:56] Buzzer_o : Off
+[2023-03-10, 08:47:02] [LOG-IN] [000000_Amkor_Master]
+[2023-03-10, 08:47:09] Simulation mode is on.
+[2023-03-10, 08:47:11] CH1_Door_Open_o : Off
+[2023-03-10, 08:47:11] CH1_Door_Close_o : On
+[2023-03-10, 08:52:58] Water_Pump_o : Off
+[2023-03-10, 08:52:58] CH1_AirValve_o : Off
+[2023-03-10, 08:52:58] CH1_WaterValve_1_o : Off
+[2023-03-10, 08:52:58] CH1_WaterValve_2_o : Off
+[2023-03-10, 08:52:58] CH1_BrushClean_WaterValve_o : Off
+[2023-03-10, 08:52:58] CH1_BrushClean_AirValve_o : Off
+[2023-03-10, 08:52:58] Buzzer_o : On
+[2023-03-10, 08:52:59] Buzzer_o : Off
+[2023-03-10, 08:53:22] [LOG-IN] [000000_Amkor_Master]
+[2023-03-10, 09:37:42] Simulation mode is on.
+[2023-03-10, 09:37:44] CH1_Door_Open_o : Off
+[2023-03-10, 09:37:44] CH1_Door_Close_o : On
+[2023-03-10, 09:54:53] Water_Pump_o : Off
+[2023-03-10, 09:54:53] CH1_AirValve_o : Off
+[2023-03-10, 09:54:53] CH1_WaterValve_1_o : Off
+[2023-03-10, 09:54:53] CH1_WaterValve_2_o : Off
+[2023-03-10, 09:54:53] CH1_BrushClean_WaterValve_o : Off
+[2023-03-10, 09:54:53] CH1_BrushClean_AirValve_o : Off
+[2023-03-10, 09:54:53] Buzzer_o : On
+[2023-03-10, 09:54:54] Buzzer_o : Off
+[2023-03-10, 09:54:57] [LOG-IN] [000000_Amkor_Master]

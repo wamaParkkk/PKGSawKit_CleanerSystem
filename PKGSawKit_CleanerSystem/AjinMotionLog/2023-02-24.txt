@@ -1,0 +1,15 @@
+[2023-02-24, 09:40:25] Mot File Not Found
+[2023-02-24, 09:40:25] Ajin motion driver initialization fail
+[2023-02-24, 09:40:25] Ajin motion driver close
+[2023-02-24, 09:41:30] Mot File Not Found
+[2023-02-24, 09:41:30] Ajin motion driver initialization fail
+[2023-02-24, 09:41:30] Ajin motion driver close
+[2023-02-24, 09:43:28] Mot File Not Found
+[2023-02-24, 09:43:28] Ajin motion driver initialization fail
+[2023-02-24, 09:43:28] Ajin motion driver close
+[2023-02-24, 09:46:36] Mot File Not Found
+[2023-02-24, 09:46:36] Ajin motion driver initialization fail
+[2023-02-24, 09:46:36] Ajin motion driver close
+[2023-02-24, 09:48:29] Mot File Not Found
+[2023-02-24, 09:48:29] Ajin motion driver initialization fail
+[2023-02-24, 09:48:29] Ajin motion driver close

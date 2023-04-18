@@ -1,0 +1,32 @@
+[2023-02-20, 12:20:08] Mot File Not Found
+[2023-02-20, 12:20:08] Ajin motion driver initialization fail
+[2023-02-20, 12:20:08] Ajin motion driver close
+[2023-02-20, 12:21:26] Mot File Not Found
+[2023-02-20, 12:21:26] Ajin motion driver initialization fail
+[2023-02-20, 12:21:26] Ajin motion driver close
+[2023-02-20, 13:33:27] Mot File Not Found
+[2023-02-20, 13:33:27] Ajin motion driver initialization fail
+[2023-02-20, 13:33:27] Ajin motion driver close
+[2023-02-20, 13:34:55] Mot File Not Found
+[2023-02-20, 13:34:55] Ajin motion driver initialization fail
+[2023-02-20, 13:34:55] Ajin motion driver close
+[2023-02-20, 13:35:51] Mot File Not Found
+[2023-02-20, 13:35:51] Ajin motion driver initialization fail
+[2023-02-20, 13:35:51] Ajin motion driver close
+[2023-02-20, 13:45:21] Mot File Not Found
+[2023-02-20, 13:45:21] Ajin motion driver initialization fail
+[2023-02-20, 13:45:21] Ajin motion driver close
+[2023-02-20, 13:49:57] Mot File Not Found
+[2023-02-20, 13:49:57] Ajin motion driver initialization fail
+[2023-02-20, 13:49:57] Ajin motion driver close
+[2023-02-20, 13:51:22] Mot File Not Found
+[2023-02-20, 13:51:22] Ajin motion driver initialization fail
+[2023-02-20, 13:51:22] Ajin motion driver close
+[2023-02-20, 13:51:56] [Axis no:0] Home start
+[2023-02-20, 13:52:15] AxmMoveSStop return error code : 1053
+[2023-02-20, 13:52:57] AxmMoveSStop return error code : 1053
+[2023-02-20, 13:52:57] AxmMoveSStop return error code : 1053
+[2023-02-20, 13:52:57] AxmMoveSStop return error code : 1053
+[2023-02-20, 13:57:09] Mot File Not Found
+[2023-02-20, 13:57:09] Ajin motion driver initialization fail
+[2023-02-20, 13:57:09] Ajin motion driver close

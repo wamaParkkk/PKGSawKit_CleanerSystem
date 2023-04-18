@@ -1,0 +1,131 @@
+[2023-02-20, 12:20:08] Water_Pump_o : Off
+[2023-02-20, 12:20:08] CH1_AirValve_o : Off
+[2023-02-20, 12:20:08] CH1_WaterValve_1_o : Off
+[2023-02-20, 12:20:08] CH1_WaterValve_2_o : Off
+[2023-02-20, 12:20:08] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 12:20:08] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 12:20:08] Buzzer_o : On
+[2023-02-20, 12:20:14] Buzzer_o : Off
+[2023-02-20, 12:21:27] Water_Pump_o : Off
+[2023-02-20, 12:21:27] CH1_AirValve_o : Off
+[2023-02-20, 12:21:27] CH1_WaterValve_1_o : Off
+[2023-02-20, 12:21:27] CH1_WaterValve_2_o : Off
+[2023-02-20, 12:21:27] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 12:21:27] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 12:21:27] Buzzer_o : On
+[2023-02-20, 12:21:33] Buzzer_o : Off
+[2023-02-20, 13:33:34] Water_Pump_o : Off
+[2023-02-20, 13:33:34] CH1_AirValve_o : Off
+[2023-02-20, 13:33:34] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:33:34] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:33:34] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:33:34] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 13:33:34] Buzzer_o : On
+[2023-02-20, 13:33:45] Buzzer_o : Off
+[2023-02-20, 13:34:56] Water_Pump_o : Off
+[2023-02-20, 13:34:56] CH1_AirValve_o : Off
+[2023-02-20, 13:34:56] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:34:56] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:34:56] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:34:56] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 13:34:56] Buzzer_o : On
+[2023-02-20, 13:35:02] Buzzer_o : Off
+[2023-02-20, 13:35:52] Water_Pump_o : Off
+[2023-02-20, 13:35:52] CH1_AirValve_o : Off
+[2023-02-20, 13:35:52] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:35:52] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:35:52] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:35:52] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 13:35:52] Buzzer_o : On
+[2023-02-20, 13:35:58] Buzzer_o : Off
+[2023-02-20, 13:45:22] Water_Pump_o : Off
+[2023-02-20, 13:45:22] CH1_AirValve_o : Off
+[2023-02-20, 13:45:22] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:45:22] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:45:22] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:45:22] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 13:45:22] Buzzer_o : On
+[2023-02-20, 13:45:28] Buzzer_o : Off
+[2023-02-20, 13:49:57] Water_Pump_o : Off
+[2023-02-20, 13:49:57] CH1_AirValve_o : Off
+[2023-02-20, 13:49:57] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:49:57] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:49:57] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:49:57] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 13:49:57] Buzzer_o : On
+[2023-02-20, 13:50:03] Buzzer_o : Off
+[2023-02-20, 13:51:22] Water_Pump_o : Off
+[2023-02-20, 13:51:22] CH1_AirValve_o : Off
+[2023-02-20, 13:51:22] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:51:22] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:51:22] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:51:22] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 13:51:22] Buzzer_o : On
+[2023-02-20, 13:51:28] Buzzer_o : Off
+[2023-02-20, 13:51:36] [LOG-IN] [000000_Amkor_Master]
+[2023-02-20, 13:51:44] Simulation mode is on.
+[2023-02-20, 13:51:48] START THE PROCESS.
+[2023-02-20, 13:51:49] Check the door Close
+[2023-02-20, 13:51:49] CH1_Door_Open_o : Off
+[2023-02-20, 13:51:49] CH1_Door_Close_o : On
+[2023-02-20, 13:51:50] Check the door Close
+[2023-02-20, 13:51:50] CH1_Door_Open_o : Off
+[2023-02-20, 13:51:50] CH1_Door_Close_o : On
+[2023-02-20, 13:51:53] Loading the process recipe file.
+[2023-02-20, 13:51:53] Loading the process recipe file.
+[2023-02-20, 13:51:53] Recipe file was successfully read.
+[2023-02-20, 13:51:53] Recipe name : PM1_Test.csv
+[2023-02-20, 13:51:53] Recipe name : PM1_Test.csv
+[2023-02-20, 13:51:53] CH1_Brush_Fwd_o : Off
+[2023-02-20, 13:51:53] CH1_Brush_Fwd_o : Off
+[2023-02-20, 13:51:53] CH1_Brush_Bwd_o : Off
+[2023-02-20, 13:51:53] Check if brush is used
+[2023-02-20, 13:51:53] Check if brush is used
+[2023-02-20, 13:51:53] Process Step : 1
+[2023-02-20, 13:51:53] Process Step : 1
+[2023-02-20, 13:51:54] CH1_Nozzle_Pwr_o : On
+[2023-02-20, 13:51:54] CH1_Nozzle_Fwd_o : On
+[2023-02-20, 13:51:54] CH1_Nozzle_Bwd_o : Off
+[2023-02-20, 13:51:54] CH1_Nozzle_Pwr_o : On
+[2023-02-20, 13:51:54] CH1_Nozzle_Fwd_o : On
+[2023-02-20, 13:51:54] CH1_Nozzle_Bwd_o : Off
+[2023-02-20, 13:51:55] CH1_Nozzle_Fwd_o : Off
+[2023-02-20, 13:51:55] CH1_Nozzle_Fwd_o : Off
+[2023-02-20, 13:51:56] START THE BRUSH UP.
+[2023-02-20, 13:51:56] Brush : Home
+[2023-02-20, 13:51:56] Brush : Home
+[2023-02-20, 13:52:15] CH1_AirValve_o : Off
+[2023-02-20, 13:52:15] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:52:15] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:52:15] Buzzer_o : On
+[2023-02-20, 13:52:56] CH1_AirValve_o : Off
+[2023-02-20, 13:52:56] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:52:56] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:52:56] Process has stopped : Abort
+[2023-02-20, 13:52:56] CH1_AirValve_o : Off
+[2023-02-20, 13:52:56] CH1_AirValve_o : Off
+[2023-02-20, 13:52:56] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:52:56] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:52:57] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:52:57] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:52:57] Brush up/down movement stopped : Abort
+[2023-02-20, 13:52:57] CH1_Nozzle_Fwd_o : Off
+[2023-02-20, 13:52:57] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:52:57] CH1_Nozzle_Bwd_o : Off
+[2023-02-20, 13:52:57] Cylinder movement stopped : Abort
+[2023-02-20, 13:52:57] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:52:57] CH1_Nozzle_Fwd_o : Off
+[2023-02-20, 13:52:57] CH1_Nozzle_Bwd_o : Off
+[2023-02-20, 13:52:57] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:52:57] CH1_Brush_Bwd_o : Off
+[2023-02-20, 13:52:57] CH1_Brush_Fwd_o : Off
+[2023-02-20, 13:52:57] CH1_Brush_Bwd_o : Off
+[2023-02-20, 13:52:57] Brush cylinder movement stopped : Abort
+[2023-02-20, 13:57:09] Water_Pump_o : Off
+[2023-02-20, 13:57:09] CH1_AirValve_o : Off
+[2023-02-20, 13:57:09] CH1_WaterValve_1_o : Off
+[2023-02-20, 13:57:09] CH1_WaterValve_2_o : Off
+[2023-02-20, 13:57:09] CH1_BrushClean_WaterValve_o : Off
+[2023-02-20, 13:57:09] CH1_BrushClean_AirValve_o : Off
+[2023-02-20, 13:57:09] Buzzer_o : On
+[2023-02-20, 13:57:15] Buzzer_o : Off

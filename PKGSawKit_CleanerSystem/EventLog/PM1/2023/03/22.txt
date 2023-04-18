@@ -1,0 +1,12 @@
+[2023-03-22, 09:03:10] Water_Pump_o : Off
+[2023-03-22, 09:03:10] CH1_AirValve_o : Off
+[2023-03-22, 09:03:10] CH1_WaterValve_1_o : Off
+[2023-03-22, 09:03:10] CH1_WaterValve_2_o : Off
+[2023-03-22, 09:03:10] CH1_BrushClean_WaterValve_o : Off
+[2023-03-22, 09:03:10] CH1_BrushClean_AirValve_o : Off
+[2023-03-22, 09:03:10] Buzzer_o : On
+[2023-03-22, 09:03:11] Buzzer_o : Off
+[2023-03-22, 09:03:14] Simulation mode is on.
+[2023-03-22, 09:03:21] [LOG-IN] [000000_Amkor_Master]
+[2023-03-22, 09:03:35] Water_Pump_o : On
+[2023-03-22, 09:04:06] Water_Pump_o : Off

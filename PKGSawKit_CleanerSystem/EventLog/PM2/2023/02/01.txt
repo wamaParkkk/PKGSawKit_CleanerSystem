@@ -1,0 +1,11 @@
+[2023-02-01, 16:19:49] CH2_AirValve_1_o : Off
+[2023-02-01, 16:19:49] CH2_AirValve_2_o : Off
+[2023-02-01, 16:19:49] CH2_WaterValve_1_o : Off
+[2023-02-01, 16:19:49] CH2_WaterValve_2_o : Off
+[2023-02-01, 16:19:49] CH2_WaterValve_3_o : Off
+[2023-02-01, 16:19:49] CH2_WaterValve_4_o : Off
+[2023-02-01, 16:19:49] CH2_WaterValve_5_o : Off
+[2023-02-01, 16:19:49] FluorescentLamp_o : On
+[2023-02-01, 16:20:22] FluorescentLamp_o : Off
+[2023-02-01, 16:20:31] CH2_Door_Open_o : Off
+[2023-02-01, 16:20:31] CH2_Door_Close_o : On

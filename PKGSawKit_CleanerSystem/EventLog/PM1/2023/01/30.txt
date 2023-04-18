@@ -1,0 +1,52 @@
+[2023-01-30, 14:12:35] CH1_AirValve_o : Off
+[2023-01-30, 14:12:35] CH1_WaterValve_1_o : Off
+[2023-01-30, 14:12:35] CH1_WaterValve_2_o : Off
+[2023-01-30, 14:12:35] CH1_BrushClean_WaterValve_o : Off
+[2023-01-30, 14:12:35] CH1_BrushClean_AirValve_o : Off
+[2023-01-30, 14:12:35] Water_Pump_o : Off
+[2023-01-30, 14:12:35] Buzzer_o : On
+[2023-01-30, 14:12:36] Buzzer_o : Off
+[2023-01-30, 14:12:53] [LOG-IN] [000000_Amkor_Master]
+[2023-01-30, 14:13:57] CH1_AirValve_o : Off
+[2023-01-30, 14:13:57] CH1_WaterValve_1_o : Off
+[2023-01-30, 14:13:57] CH1_WaterValve_2_o : Off
+[2023-01-30, 14:13:57] CH1_BrushClean_WaterValve_o : Off
+[2023-01-30, 14:13:57] CH1_BrushClean_AirValve_o : Off
+[2023-01-30, 14:13:57] Water_Pump_o : Off
+[2023-01-30, 14:13:57] Buzzer_o : On
+[2023-01-30, 14:13:58] Buzzer_o : Off
+[2023-01-30, 14:14:03] [LOG-IN] [000000_Amkor_Master]
+[2023-01-30, 14:14:24] Water_Pump_o : On
+[2023-01-30, 14:14:24] Water_Pump_o : Off
+[2023-01-30, 14:14:25] Water_Pump_o : On
+[2023-01-30, 14:14:25] Water_Pump_o : Off
+[2023-01-30, 14:14:27] CH1_Brush_Pwr_o : On
+[2023-01-30, 14:14:27] CH1_Brush_Pwr_o : Off
+[2023-01-30, 14:16:03] CH1_AirValve_o : Off
+[2023-01-30, 14:16:03] CH1_WaterValve_1_o : Off
+[2023-01-30, 14:16:03] CH1_WaterValve_2_o : Off
+[2023-01-30, 14:16:03] CH1_BrushClean_WaterValve_o : Off
+[2023-01-30, 14:16:03] CH1_BrushClean_AirValve_o : Off
+[2023-01-30, 14:16:03] Water_Pump_o : Off
+[2023-01-30, 14:16:03] Buzzer_o : On
+[2023-01-30, 14:16:04] Buzzer_o : Off
+[2023-01-30, 14:16:43] [LOG-IN] [000000_Amkor_Master]
+[2023-01-30, 14:16:46] Simulation mode is on.
+[2023-01-30, 14:17:11] CH1_Door_Open_o : Off
+[2023-01-30, 14:17:11] CH1_Door_Close_o : On
+[2023-01-30, 14:17:39] CH1_Door_Open_o : On
+[2023-01-30, 14:17:39] CH1_Door_Close_o : Off
+[2023-01-30, 14:17:43] CH1_Door_Open_o : Off
+[2023-01-30, 14:17:43] CH1_Door_Close_o : On
+[2023-01-30, 14:17:48] CH1_Door_Open_o : On
+[2023-01-30, 14:17:48] CH1_Door_Close_o : Off
+[2023-01-30, 14:17:55] CH1_Door_Open_o : Off
+[2023-01-30, 14:17:55] CH1_Door_Close_o : On
+[2023-01-30, 14:18:04] CH1_Door_Open_o : On
+[2023-01-30, 14:18:04] CH1_Door_Close_o : Off
+[2023-01-30, 14:18:11] CH1_Door_Open_o : Off
+[2023-01-30, 14:18:11] CH1_Door_Close_o : On
+[2023-01-30, 14:18:17] CH1_AirValve_o : On
+[2023-01-30, 14:18:43] CH1_BrushClean_AirValve_o : On
+[2023-01-30, 14:19:00] CH1_WaterValve_1_o : On
+[2023-01-30, 14:19:03] CH1_WaterValve_2_o : On

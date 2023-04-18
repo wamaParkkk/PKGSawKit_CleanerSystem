@@ -1,0 +1,9 @@
+[2023-03-22, 09:03:10] Mot File Not Found
+[2023-03-22, 09:03:10] Ajin motion driver initialization fail
+[2023-03-22, 09:03:10] Ajin motion driver close
+[2023-03-22, 09:03:35] Setting(mm) : axis_no = 2, position = 100.000, velocity = 500.0, accel = 1000.0, decel = 1000.0
+[2023-03-22, 09:03:35] axis_no = 2, position = 100.000, velocity = 500.0, accel = 1000.0, decel = 1000.0, result = 1053
+[2023-03-22, 09:03:35] Failed to start motor movement
+[2023-03-22, 09:04:06] AxmMoveSStop return error code : 1053
+[2023-03-22, 09:04:12] AxmMoveSStop return error code : 1053
+[2023-03-22, 09:04:12] AxmMoveSStop return error code : 1053
