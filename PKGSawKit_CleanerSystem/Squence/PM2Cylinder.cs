@@ -11,7 +11,7 @@ namespace PKGSawKit_CleanerSystem.Squence
         Thread thread;
         private new TStep step;
         Alarm_List alarm_List;  // Alarm list
-        bool bHomeFlag;
+        
         int nHomeCnt;
 
         public PM2Cylinder()
@@ -23,7 +23,7 @@ namespace PKGSawKit_CleanerSystem.Squence
             
             alarm_List = new Alarm_List();
 
-            bHomeFlag = false;
+            Define.bHomeFlag = false;
 
             thread.Start();
         }
@@ -206,7 +206,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 step.Times = 1;
                 step.Flag = true;
 
-                bHomeFlag = false;
+                Define.bHomeFlag = false;
 
                 Define.seqCylinderCtrl[module] = Define.CTRL_RUNNING;
                 Define.seqCylinderSts[module] = Define.STS_CYLINDER_HOMEING;                
@@ -361,7 +361,7 @@ namespace PKGSawKit_CleanerSystem.Squence
         {
             if (step.Flag)
             {
-                if (bHomeFlag)
+                if (Define.bHomeFlag)
                 {
                     F_INC_STEP();
                 }
@@ -389,7 +389,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                     if ((MotionClass.motor[Define.axis_y].sR_HomeStatus == "Home") &&
                         (MotionClass.motor[Define.axis_y].sR_BusyStatus == "Ready"))
                     {                        
-                        bHomeFlag = true;
+                        Define.bHomeFlag = true;
 
                         if (nHomeCnt > 5)
                         {

@@ -243,13 +243,14 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                     case 5:
                         {
-                            P_PROCESS_IO_Setting();
+                            P_Cylinder_FwdBwd_Seq("Run");
+                            
                         }
                         break;
 
                     case 6:
                         {
-                            P_Cylinder_FwdBwd_Seq("Run");
+                            P_PROCESS_IO_Setting();
                         }
                         break;
 

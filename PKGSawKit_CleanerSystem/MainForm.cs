@@ -735,7 +735,7 @@ namespace PKGSawKit_CleanerSystem
 
             // Daily count init
             string sTime = DateTime.Now.ToString("HH:mm:ss");
-            if (sTime == "09:06:00")
+            if (sTime == "00:00:00")
             {
                 if (!bLogCnt)
                 {

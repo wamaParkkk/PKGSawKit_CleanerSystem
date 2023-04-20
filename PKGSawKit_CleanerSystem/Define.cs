@@ -384,6 +384,10 @@
         // Tool check
         public static bool[] bDontCheckTool = { false, false };
 
+        // 모터 Home 여부
+        public static bool bBrushHomeFlag;
+        public static bool bHomeFlag;
+
         // Motor axis
         public const int axis_z = 0;   // Brush up/down axis
         public const int axis_r = 1;   // Brush rotation axis

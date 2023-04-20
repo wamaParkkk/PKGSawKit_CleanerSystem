@@ -11,7 +11,7 @@ namespace PKGSawKit_CleanerSystem.Squence
         Thread thread;
         private new TStep step;
         Alarm_List alarm_List;  // Alarm list
-        bool bBrushHomeFlag;
+        
         int nHomeCnt;
 
         public PM1BrushUpDown()
@@ -23,7 +23,7 @@ namespace PKGSawKit_CleanerSystem.Squence
             
             alarm_List = new Alarm_List();
 
-            bBrushHomeFlag = false;            
+            Define.bBrushHomeFlag = false;            
 
             thread.Start();
         }
@@ -137,7 +137,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 step.Times = 1;
                 step.Flag = true;
 
-                bBrushHomeFlag = false;
+                Define.bBrushHomeFlag = false;
 
                 Define.seqBrushUpDnCtrl = Define.CTRL_RUNNING;
                 Define.seqBrushUpDnSts = Define.STS_BRUSH_UPDN_HOMEING;                
@@ -250,7 +250,7 @@ namespace PKGSawKit_CleanerSystem.Squence
         {
             if (step.Flag)
             {
-                if (bBrushHomeFlag)
+                if (Define.bBrushHomeFlag)
                 {
                     F_INC_STEP();
                 }
@@ -273,7 +273,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                     if ((MotionClass.motor[Define.axis_z].sR_HomeStatus == "Home") && 
                         (MotionClass.motor[Define.axis_z].sR_BusyStatus == "Ready"))                        
                     {
-                        bBrushHomeFlag = true;
+                        Define.bBrushHomeFlag = true;
 
                         if (nHomeCnt > 5)
                         {
@@ -335,6 +335,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 }
                 else if (UpDn == "Down")
                 {
+                    /*
                     if ((MotionClass.motor[Define.axis_z].sR_HomeStatus == "+Limit") &&
                         (MotionClass.motor[Define.axis_z].sR_BusyStatus == "Ready"))
                     {
@@ -345,6 +346,17 @@ namespace PKGSawKit_CleanerSystem.Squence
                         MotionClass.MotorMove(Define.axis_z, Configure_List.Brush_Down_Position);
                         Thread.Sleep(1000);
                         MotionClass.MotorMove(Define.axis_z, Configure_List.Brush_Down_Position);
+
+                        step.Flag = false;
+                        step.Times = 1;
+                    } 
+                    */
+                    if (MotionClass.motor[Define.axis_z].sR_BusyStatus == "Ready")
+                    {
+                        MotionClass.MotorMove(Define.axis_z, Configure_List.Brush_Down_Position);
+                        Thread.Sleep(1000);
+                        MotionClass.MotorMove(Define.axis_z, Configure_List.Brush_Down_Position);
+                        Thread.Sleep(500);
 
                         step.Flag = false;
                         step.Times = 1;
@@ -377,7 +389,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 }
                 else
                 {
-                    if ((MotionClass.motor[Define.axis_z].sR_HomeStatus == "+Limit") &&
+                    if (//(MotionClass.motor[Define.axis_z].sR_HomeStatus == "+Limit") &&
                         (MotionClass.motor[Define.axis_z].sR_BusyStatus == "Ready"))
                     {
                         //Thread.Sleep(500);
