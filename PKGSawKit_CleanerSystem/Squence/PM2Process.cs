@@ -156,8 +156,8 @@ namespace PKGSawKit_CleanerSystem.Squence
 
             Global.EventLog(almId + ":" + Define.sAlarmName, ModuleName, "Alarm");
 
-            //HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Alarm");
-            //HostConnection.Host_Set_AlarmName(Global.hostEquipmentInfo, ModuleName, Define.sAlarmName);
+            HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Alarm");
+            HostConnection.Host_Set_AlarmName(Global.hostEquipmentInfo, ModuleName, Define.sAlarmName);
         }
 
         public void F_INC_STEP()
@@ -209,8 +209,8 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                 Global.EventLog("START THE PROCESS.", ModuleName, "Event");
 
-                //HostConnection.Host_Set_ProcessEndTime(Global.hostEquipmentInfo, ModuleName, "");
-                //HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Process");
+                HostConnection.Host_Set_ProcessEndTime(Global.hostEquipmentInfo, ModuleName, "");
+                HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Process");
             }
             else if ((Define.seqMode[module] == Define.MODE_PROCESS) && (Define.seqCtrl[module] == Define.CTRL_RUNNING))
             {
@@ -243,38 +243,38 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                     case 5:
                         {
-                            P_Cylinder_FwdBwd_Seq("Run");
-                            
+                            P_Cylinder_FwdBwd_Seq("Home");
                         }
                         break;
 
                     case 6:
                         {
-                            P_PROCESS_IO_Setting();
+                            P_Cylinder_FwdBwd_Seq("Run");
+                            
                         }
                         break;
 
                     case 7:
                         {
-                            P_PROCESS_ProcessTimeCheck();
+                            P_PROCESS_IO_Setting();
                         }
                         break;
 
                     case 8:
                         {
-                            P_PROCESS_EndStepCheck(4);
+                            P_PROCESS_ProcessTimeCheck();
                         }
                         break;
 
                     case 9:
                         {
-                            P_Cylinder_FwdBwd_Seq("Home");
+                            P_PROCESS_EndStepCheck(4);
                         }
                         break;
 
                     case 10:
                         {
-                            F_INC_STEP();
+                            P_Cylinder_FwdBwd_Seq("Home");
                         }
                         break;
 
@@ -286,11 +286,17 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                     case 12:
                         {
-                            P_PROCESS_DoorCheck("Open");
+                            F_INC_STEP();
                         }
                         break;
 
                     case 13:
+                        {
+                            P_PROCESS_DoorCheck("Open");
+                        }
+                        break;
+
+                    case 14:
                         {
                             P_PROCESS_ProcessEnd();
                         }
@@ -317,7 +323,7 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                 Global.EventLog("START THE INITIALIZE.", ModuleName, "Event");
 
-                //HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Init");
+                HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Init");
             }
             else if ((Define.seqMode[module] == Define.MODE_INIT) && (Define.seqCtrl[module] == Define.CTRL_RUNNING))
             {
@@ -458,7 +464,7 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                     Global.EventLog("Recipe name : " + Global.prcsInfo.prcsRecipeName[module], ModuleName, "Event");
 
-                    //HostConnection.Host_Set_RecipeName(Global.hostEquipmentInfo, ModuleName, Global.prcsInfo.prcsRecipeName[module]);
+                    HostConnection.Host_Set_RecipeName(Global.hostEquipmentInfo, ModuleName, Global.prcsInfo.prcsRecipeName[module]);
 
                     F_INC_STEP();
                 }
@@ -621,7 +627,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 string strProgressTime = string.Format("{0}/{1}",
                         Global.prcsInfo.prcsCurrentStep[module].ToString(), Global.prcsInfo.prcsTotalStep[module].ToString());
 
-                //HostConnection.Host_Set_ProgressTime(Global.hostEquipmentInfo, ModuleName, strProgressTime);
+                HostConnection.Host_Set_ProgressTime(Global.hostEquipmentInfo, ModuleName, strProgressTime);
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 // Air1
@@ -821,14 +827,14 @@ namespace PKGSawKit_CleanerSystem.Squence
         private void P_PROCESS_ProcessEnd()
         {
             Global.prcsInfo.prcsEndTime[module] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            //HostConnection.Host_Set_ProcessEndTime(Global.hostEquipmentInfo, ModuleName, Global.prcsInfo.prcsEndTime[module]);
+            HostConnection.Host_Set_ProcessEndTime(Global.hostEquipmentInfo, ModuleName, Global.prcsInfo.prcsEndTime[module]);
 
             Define.seqMode[module] = Define.MODE_IDLE;
             Define.seqCtrl[module] = Define.CTRL_IDLE;
             Define.seqSts[module] = Define.STS_PROCESS_END;
 
             // Process end buzzer
-            Global.SetDigValue((int)DigOutputList.Buzzer_o, (uint)DigitalOffOn.On, ModuleName);
+            //Global.SetDigValue((int)DigOutputList.Buzzer_o, (uint)DigitalOffOn.On, ModuleName);
 
             Global.EventLog("PROCESS COMPLETED.", ModuleName, "Event");
 
@@ -858,9 +864,7 @@ namespace PKGSawKit_CleanerSystem.Squence
         private void F_DAILY_COUNT()
         {
             Define.iPM2DailyCnt++;
-            Global.DailyLog(Define.iPM2DailyCnt, ModuleName);
-
-            //HostConnection.Host_Set_DailyCount(Global.hostEquipmentInfo, ModuleName, Define.iPM2DailyCnt.ToString("00"));
+            Global.DailyLog(Define.iPM2DailyCnt, ModuleName);            
         }
         #endregion
 

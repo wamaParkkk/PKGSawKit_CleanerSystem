@@ -601,7 +601,7 @@ namespace PKGSawKit_CleanerSystem
             this.label_Alarm.ForeColor = System.Drawing.Color.Red;
             this.label_Alarm.Location = new System.Drawing.Point(350, 55);
             this.label_Alarm.Name = "label_Alarm";
-            this.label_Alarm.Size = new System.Drawing.Size(35, 32);
+            this.label_Alarm.Size = new System.Drawing.Size(34, 32);
             this.label_Alarm.TabIndex = 0;
             this.label_Alarm.Text = "--";
             // 
@@ -612,13 +612,13 @@ namespace PKGSawKit_CleanerSystem
             this.Door_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Door_Close.Controls.Add(this.PM1BrushRotate2);
             this.Door_Close.Controls.Add(this.PM1BrushRotate1);
+            this.Door_Close.Controls.Add(this.labelBrushCleaning);
             this.Door_Close.Controls.Add(this.PM1Air1);
             this.Door_Close.Controls.Add(this.PM1Water2_2);
             this.Door_Close.Controls.Add(this.PM1Water1_1);
             this.Door_Close.Controls.Add(this.PM1Water1_2);
             this.Door_Close.Controls.Add(this.PM1Water2_1);
             this.Door_Close.Controls.Add(this.PM1Air2);
-            this.Door_Close.Controls.Add(this.labelBrushCleaning);
             this.Door_Close.Location = new System.Drawing.Point(440, 200);
             this.Door_Close.Name = "Door_Close";
             this.Door_Close.Size = new System.Drawing.Size(329, 443);

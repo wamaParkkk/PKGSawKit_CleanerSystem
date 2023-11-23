@@ -271,6 +271,7 @@
         public static string sInterlockChecklist = "";
         public static bool bDoorAutoRelease = false;
         public static bool bSimulation = false;
+        public static bool bManualLamp = false;
         
 
         // Sequence에서 사용 할 변수

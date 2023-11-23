@@ -702,26 +702,30 @@ namespace PKGSawKit_CleanerSystem
             }
 
             // Fluorescent Lamp set
-            if (Global.GetDigValue((int)DigInputList.Front_Door_Sensor_i) == "Off")
+            if (!Define.bManualLamp)
             {
-                if (Global.digSet.curDigSet[(int)DigOutputList.FluorescentLamp_o] != null)
+                if (Global.GetDigValue((int)DigInputList.Front_Door_Sensor_i) == "Off")
                 {
-                    if (Global.digSet.curDigSet[(int)DigOutputList.FluorescentLamp_o] != "On")
+                    if (Global.digSet.curDigSet[(int)DigOutputList.FluorescentLamp_o] != null)
                     {
-                        Global.SetDigValue((int)DigOutputList.FluorescentLamp_o, (uint)DigitalOffOn.On, "PM2");
+                        if (Global.digSet.curDigSet[(int)DigOutputList.FluorescentLamp_o] != "On")
+                        {
+                            Global.SetDigValue((int)DigOutputList.FluorescentLamp_o, (uint)DigitalOffOn.On, "PM2");
+                        }
+                    }
+                }
+                else
+                {
+                    if (Global.digSet.curDigSet[(int)DigOutputList.FluorescentLamp_o] != null)
+                    {
+                        if (Global.digSet.curDigSet[(int)DigOutputList.FluorescentLamp_o] != "Off")
+                        {
+                            Global.SetDigValue((int)DigOutputList.FluorescentLamp_o, (uint)DigitalOffOn.Off, "PM2");
+                        }
                     }
                 }
             }
-            else
-            {
-                if (Global.digSet.curDigSet[(int)DigOutputList.FluorescentLamp_o] != null)
-                {
-                    if (Global.digSet.curDigSet[(int)DigOutputList.FluorescentLamp_o] != "Off")
-                    {
-                        Global.SetDigValue((int)DigOutputList.FluorescentLamp_o, (uint)DigitalOffOn.Off, "PM2");
-                    }
-                }
-            }
+            
 
             // Process end - buzzer auto off
             if (Global.GetDigValue((int)DigInputList.Front_Door_Sensor_i) == "Off")
@@ -760,28 +764,7 @@ namespace PKGSawKit_CleanerSystem
                 {
                     bLogCnt = false;
                 }
-            }
-
-            
-            //label_SeqStep1.Text = Define.iStepNum1.ToString();
-            //label_SeqStep2.Text = Define.iStepNum2.ToString();
-        }
-
-        private void F_CAPA_CALC()
-        {
-            /*
-            int iDailyAllCnt = Define.iPM1DailyCnt + Define.iPM2DailyCnt;
-            double dPerformance = ((double)(iDailyAllCnt) / Define.iCapa) * 100;
-            string strPerformance = dPerformance.ToString("00.00");
-
-            HostConnection.Host_Set_Log(Global.hostEquipmentInfo_Log,
-                DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd"),
-                Define.iPM1DailyCnt.ToString("00"),
-                Define.iPM2DailyCnt.ToString("00"),
-                "00",
-                "0",
-                strPerformance);
-            */
+            }                       
         }
 
         private void RUNTIME_LOAD()

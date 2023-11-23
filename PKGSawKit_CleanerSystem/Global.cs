@@ -1,6 +1,7 @@
 ﻿using Ajin_IO_driver;
 using MsSqlManagerLibrary;
 using System;
+using System.Drawing;
 using System.IO;
 using System.Text;
 using System.Threading;
@@ -267,7 +268,7 @@ namespace PKGSawKit_CleanerSystem
             timer.Elapsed += new ElapsedEventHandler(VALUE_INTERLOCK_CHECK);
             timer.Start();
 
-            /*
+            
             string strRtn = HostConnection.Connect();
             if (strRtn == "OK")
             {
@@ -294,8 +295,7 @@ namespace PKGSawKit_CleanerSystem
             else
             {
                 MessageBox.Show("EE 서버 접속에 실패했습니다", "알림", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            } 
-            */
+            }                   
         }
 
         public static void GetDailyLogCount(string moduleName)
@@ -323,14 +323,10 @@ namespace PKGSawKit_CleanerSystem
                         if (moduleName == "PM1")
                         {
                             Define.iPM1DailyCnt = int.Parse(spString[0]);
-
-                            //HostConnection.Host_Set_DailyCount(hostEquipmentInfo, "PM1", Define.iPM1DailyCnt.ToString("00"));
                         }
                         else if (moduleName == "PM2")
                         {
-                            Define.iPM2DailyCnt = int.Parse(spString[0]);
-
-                            //HostConnection.Host_Set_DailyCount(hostEquipmentInfo, "PM2", Define.iPM2DailyCnt.ToString("00"));
+                            Define.iPM2DailyCnt = int.Parse(spString[0]);                            
                         }                        
                     }
                 }
@@ -380,55 +376,111 @@ namespace PKGSawKit_CleanerSystem
             {
                 string retMsg = string.Empty;
 
-                if (SETPOINT_INTERLOCK_CHECK(ioName, setValue, ModuleName, ref retMsg))
+                if (ModuleName == "PM1")
                 {
-                    if ((0 <= ioName) && (31 >= ioName))
+                    if (SETPOINT_INTERLOCK_CHECK1(ioName, setValue, ModuleName, ref retMsg))
                     {
-                        DIOClass.SelectHighIndex(ioName, setValue);
-                    }
-                    else if ((32 <= ioName) && (63 >= ioName))
-                    {
-                        DIOClass.SelectHighIndex2(ioName, setValue);
-                    }
-
-                    Define.sAlarmName = "";
-                    IO_StrToInt.io_code = ioName.ToString();
-                    string IO_Name = IO_StrToInt.io_code;
-                    if (setValue == 1)
-                    {
-                        digSet.curDigSet[ioName] = "On";
-
-                        if ((IO_Name == "Tower_Lamp_Red_o") ||
-                            (IO_Name == "Tower_Lamp_Yellow_o") ||
-                            (IO_Name == "Tower_Lamp_Green_o"))
+                        if ((0 <= ioName) && (31 >= ioName))
                         {
-                            //
+                            DIOClass.SelectHighIndex(ioName, setValue);
+                        }
+                        else if ((32 <= ioName) && (63 >= ioName))
+                        {
+                            DIOClass.SelectHighIndex2(ioName, setValue);
+                        }
+
+                        Define.sAlarmName = "";
+                        IO_StrToInt.io_code = ioName.ToString();
+                        string IO_Name = IO_StrToInt.io_code;
+                        if (setValue == 1)
+                        {
+                            digSet.curDigSet[ioName] = "On";
+
+                            if ((IO_Name == "Tower_Lamp_Red_o") ||
+                                (IO_Name == "Tower_Lamp_Yellow_o") ||
+                                (IO_Name == "Tower_Lamp_Green_o"))
+                            {
+                                //
+                            }
+                            else
+                            {
+                                EventLog(string.Format("{0} : On", IO_Name), ModuleName, "Event");
+                            }
                         }
                         else
-                        {                            
-                            EventLog(string.Format("{0} : On", IO_Name), ModuleName, "Event");
+                        {
+                            digSet.curDigSet[ioName] = "Off";
+
+                            if ((IO_Name == "Tower_Lamp_Red_o") ||
+                                (IO_Name == "Tower_Lamp_Yellow_o") ||
+                                (IO_Name == "Tower_Lamp_Green_o"))
+                            {
+                                //
+                            }
+                            else
+                            {
+                                EventLog(string.Format("{0} : Off", IO_Name), ModuleName, "Event");
+                            }
                         }
                     }
                     else
                     {
-                        digSet.curDigSet[ioName] = "Off";
-
-                        if ((IO_Name == "Tower_Lamp_Red_o") ||
-                            (IO_Name == "Tower_Lamp_Yellow_o") ||
-                            (IO_Name == "Tower_Lamp_Green_o"))
+                        MessageBox.Show(retMsg, "Interlock");
+                    }
+                }
+                else if (ModuleName == "PM2")
+                {
+                    if (SETPOINT_INTERLOCK_CHECK2(ioName, setValue, ModuleName, ref retMsg))
+                    {
+                        if ((0 <= ioName) && (31 >= ioName))
                         {
-                            //
+                            DIOClass.SelectHighIndex(ioName, setValue);
+                        }
+                        else if ((32 <= ioName) && (63 >= ioName))
+                        {
+                            DIOClass.SelectHighIndex2(ioName, setValue);
+                        }
+
+                        Define.sAlarmName = "";
+                        IO_StrToInt.io_code = ioName.ToString();
+                        string IO_Name = IO_StrToInt.io_code;
+                        if (setValue == 1)
+                        {
+                            digSet.curDigSet[ioName] = "On";
+
+                            if ((IO_Name == "Tower_Lamp_Red_o") ||
+                                (IO_Name == "Tower_Lamp_Yellow_o") ||
+                                (IO_Name == "Tower_Lamp_Green_o"))
+                            {
+                                //
+                            }
+                            else
+                            {
+                                EventLog(string.Format("{0} : On", IO_Name), ModuleName, "Event");
+                            }
                         }
                         else
                         {
-                            EventLog(string.Format("{0} : Off", IO_Name), ModuleName, "Event");
+                            digSet.curDigSet[ioName] = "Off";
+
+                            if ((IO_Name == "Tower_Lamp_Red_o") ||
+                                (IO_Name == "Tower_Lamp_Yellow_o") ||
+                                (IO_Name == "Tower_Lamp_Green_o"))
+                            {
+                                //
+                            }
+                            else
+                            {
+                                EventLog(string.Format("{0} : Off", IO_Name), ModuleName, "Event");
+                            }
                         }
                     }
+                    else
+                    {
+                        MessageBox.Show(retMsg, "Interlock");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show(retMsg, "Interlock");
-                }
+                
             }
             catch (IOException)
             {
@@ -444,43 +496,32 @@ namespace PKGSawKit_CleanerSystem
             {
                 if (GetDigValue((int)DigInputList.EMO_Switch_i) == "Off")
                 {
-                    if (Define.sInterlockMsg == string.Empty)
+                    ALL_VALVE_CLOSE();
+                    PROCESS_ABORT();
+
+                    SetDigValue((int)DigOutputList.Buzzer_o, (uint)DigitalOffOn.On, "PM1");
+
+                    Define.sInterlockMsg = "Emergency occurrence!";
+                    Define.sInterlockChecklist = "Check the emergency switch";
+
+                    DialogResult result = interlockDisplayForm.ShowDialog();
+                    if (result == DialogResult.OK)
                     {
-                        ALL_VALVE_CLOSE();
-                        PROCESS_ABORT();
-
-                        SetDigValue((int)DigOutputList.Buzzer_o, (uint)DigitalOffOn.On, "PM1");
-
-                        Define.sInterlockMsg = "Emergency occurrence!";
-                        Define.sInterlockChecklist = "Check the emergency switch";
-
-                        DialogResult result = interlockDisplayForm.ShowDialog();
-                        if (result == DialogResult.OK)
-                        {
-                            Define.sInterlockMsg = "";
-                            Define.sInterlockChecklist = "";
-                        }
-
-                        if (sendMsg_System != "Alarm")
-                        {
-                            //HostConnection.Host_Set_SystemStatus(hostEquipmentInfo, "System", "Alarm");
-                            sendMsg_System = "Alarm";
-                        }
+                        Define.sInterlockMsg = "";
+                        Define.sInterlockChecklist = "";
                     }
-                    else
+
+                    if (sendMsg_System != "Alarm")
                     {
-                        if (sendMsg_System != "Alarm")
-                        {
-                            //HostConnection.Host_Set_SystemStatus(hostEquipmentInfo, "System", "Alarm");
-                            sendMsg_System = "Alarm";
-                        }
+                        HostConnection.Host_Set_SystemStatus(hostEquipmentInfo, "System", "Alarm");
+                        sendMsg_System = "Alarm";
                     }
                 }
                 else
                 {
                     if (sendMsg_System != "Idle")
                     {
-                        //HostConnection.Host_Set_SystemStatus(hostEquipmentInfo, "System", "Idle");
+                        HostConnection.Host_Set_SystemStatus(hostEquipmentInfo, "System", "Idle");
                         sendMsg_System = "Idle";
                     }
                 }
@@ -547,6 +588,26 @@ namespace PKGSawKit_CleanerSystem
                             Define.sInterlockChecklist = "";
                         }
                     }
+                }
+
+                // 챔버 Cover close 중 Front door 센서 감지 시, Cover 다시 open                
+                if (GetDigValue((int)DigInputList.Front_Door_Sensor_i) == "Off")
+                {
+                    // CH1
+                    if ((GetDigValue((int)DigInputList.CH1_Door_Cl_i) != "On") &&
+                        (digSet.curDigSet[(int)DigOutputList.CH1_Door_Close_o] == "On"))
+                    {
+                        SetDigValue((int)DigOutputList.CH1_Door_Open_o, (uint)DigitalOffOn.On, "PM1");
+                        SetDigValue((int)DigOutputList.CH1_Door_Close_o, (uint)DigitalOffOn.Off, "PM1");
+                    }
+
+                    // CH2
+                    if ((GetDigValue((int)DigInputList.CH2_Door_Cl_i) != "On") &&
+                        (digSet.curDigSet[(int)DigOutputList.CH2_Door_Close_o] == "On"))
+                    {
+                        SetDigValue((int)DigOutputList.CH2_Door_Open_o, (uint)DigitalOffOn.On, "PM2");
+                        SetDigValue((int)DigOutputList.CH2_Door_Close_o, (uint)DigitalOffOn.Off, "PM2");
+                    }
                 }                
             }
 
@@ -577,13 +638,20 @@ namespace PKGSawKit_CleanerSystem
         #endregion
 
         #region 동작(IO) 명령 시 인터락
-        private static bool SETPOINT_INTERLOCK_CHECK(int ioName, uint setValue, string ModuleName, ref string retMsg)
+        private static bool SETPOINT_INTERLOCK_CHECK1(int ioName, uint setValue, string ModuleName, ref string retMsg)
         {
             // Interlock이 해제 상태인지 체크
             if (Define.bInterlockRelease)
             {
                 return true;
             }
+
+            bool bSolVv = true;
+            bool bBrush = true;
+            bool bNozzle = true;
+            bool bBrushFwd = true;
+            bool bNozzleBwd = true;
+            bool bDoor = true;
 
             if (ModuleName == "PM1")
             {
@@ -602,18 +670,19 @@ namespace PKGSawKit_CleanerSystem
                             (GetDigValue((int)DigInputList.CH1_Door_Op_i) == "Off") &&
                             (GetDigValue((int)DigInputList.CH1_Door_Cl_i) == "On"))
                         {
-                            return true;
+                            bSolVv = true;
                         }                            
                         else
                         {
                             retMsg = "EMO switch is on or Door is open";
                             EventLog("[INTERLOCK#1] " + "EMO switch is on / Door is open", ModuleName, "Event");
-                            return false;
+
+                            bSolVv = false;
                         }                            
                     }
                     else
                     {
-                        return true;
+                        bSolVv = true;
                     }
                 }
 
@@ -627,46 +696,30 @@ namespace PKGSawKit_CleanerSystem
                             (GetDigValue((int)DigInputList.CH1_Door_Op_i) == "Off") &&
                             (GetDigValue((int)DigInputList.CH1_Door_Cl_i) == "On"))
                         {
-                            return true;
+                            bBrush = true;
                         }                            
                         else
                         {
                             retMsg = "EMO switch is on or Door is open";
                             EventLog("[INTERLOCK#1] " + "EMO switch is on / Door is open", ModuleName, "Event");
-                            return false;
+
+                            bBrush = false;
                         }                            
                     }
                     else
                     {
                         if (GetDigValue((int)DigInputList.EMO_Switch_i) == "On")
                         {
-                            return true;
+                            bBrush = true;
                         }
                         else
                         {
                             retMsg = "EMO switch is on";
                             EventLog("[INTERLOCK#1] " + "EMO switch is on", ModuleName, "Event");
-                            return false;
+
+                            bBrush = false;
                         }
                     }
-                }
-
-                if (ioName == (int)DigOutputList.CH1_Brush_Fwd_o)                   
-                {
-                    if (setValue == (uint)DigitalOffOn.On)
-                    {
-                        if ((GetDigValue((int)DigInputList.CH1_Nozzle_Fwd_i) == "On") &&
-                            (GetDigValue((int)DigInputList.CH1_Nozzle_Bwd_i) == "Off"))
-                        {
-                            return true;
-                        }
-                        else
-                        {
-                            retMsg = "Nozzle position is not forward";
-                            EventLog("[INTERLOCK#1] " + "Nozzle position is not forward", ModuleName, "Event");
-                            return false;
-                        }
-                    }                    
                 }
 
                 if ((ioName == (int)DigOutputList.CH1_Nozzle_Fwd_o) ||
@@ -679,30 +732,51 @@ namespace PKGSawKit_CleanerSystem
                             (GetDigValue((int)DigInputList.CH1_Door_Op_i) == "Off") &&
                             (GetDigValue((int)DigInputList.CH1_Door_Cl_i) == "On"))
                         {
-                            return true;
+                            bNozzle = true;
                         }
                         else
                         {
                             retMsg = "EMO switch is on or Door is open";
                             EventLog("[INTERLOCK#1] " + "EMO switch is on / Door is open", ModuleName, "Event");
-                            return false;
+
+                            bNozzle = false;
                         }
                     }
                     else
                     {
                         if (GetDigValue((int)DigInputList.EMO_Switch_i) == "On")
                         {
-                            return true;
+                            bNozzle = true;
                         }
                         else
                         {
                             retMsg = "EMO switch is on";
                             EventLog("[INTERLOCK#1] " + "EMO switch is on", ModuleName, "Event");
-                            return false;
+
+                            bNozzle = false;
                         }
                     }
                 }
 
+                if (ioName == (int)DigOutputList.CH1_Brush_Fwd_o)                   
+                {
+                    if (setValue == (uint)DigitalOffOn.On)
+                    {
+                        if ((GetDigValue((int)DigInputList.CH1_Nozzle_Fwd_i) == "Off") &&
+                            (GetDigValue((int)DigInputList.CH1_Nozzle_Bwd_i) == "On"))
+                        {
+                            bBrushFwd = true;
+                        }
+                        else
+                        {
+                            retMsg = "Nozzle position is not forward";
+                            EventLog("[INTERLOCK#1] " + "Nozzle position is not forward", ModuleName, "Event");
+
+                            bBrushFwd = false;
+                        }
+                    }                    
+                }
+                
                 if (ioName == (int)DigOutputList.CH1_Nozzle_Bwd_o)
                 {
                     if (setValue == (uint)DigitalOffOn.On)
@@ -711,13 +785,14 @@ namespace PKGSawKit_CleanerSystem
                             (GetDigValue((int)DigInputList.CH1_Brush_Bwd_i) == "On") &&
                             (GetDigValue((int)DigInputList.CH1_Brush_Home_i) == "Off"))
                         {
-                            return true;
+                            bNozzleBwd = true;
                         }
                         else
                         {
                             retMsg = "Brush block position is not home";
                             EventLog("[INTERLOCK#1] " + "Brush block position is not home", ModuleName, "Event");
-                            return false;
+
+                            bNozzleBwd = false;
                         }
                     }
                 }
@@ -734,22 +809,45 @@ namespace PKGSawKit_CleanerSystem
                             (digSet.curDigSet[(int)DigOutputList.CH1_BrushClean_WaterValve_o] == "Off") &&
                             (digSet.curDigSet[(int)DigOutputList.CH1_BrushClean_AirValve_o] == "Off"))
                         {
-                            return true;
+                            bDoor = true;
                         }
                         else
                         {
                             retMsg = "Air or Water valve is open";
                             EventLog("[INTERLOCK#1] " + "Air or Water valve is open", ModuleName, "Event");
-                            return false;
+
+                            bDoor = false;
                         }
                     }
                     else
                     {
-                        return true;
+                        bDoor = true;
                     }
                 }                
+
+                if ((bSolVv) && (bBrush) && (bNozzle) && (bBrushFwd) && (bNozzleBwd) && (bDoor))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }            
+
+            return true;
+        }
+
+        private static bool SETPOINT_INTERLOCK_CHECK2(int ioName, uint setValue, string ModuleName, ref string retMsg)
+        {
+            // Interlock이 해제 상태인지 체크
+            if (Define.bInterlockRelease)
+            {
+                return true;
             }
 
+            bool bSolVv = true;            
+            bool bDoor = true;
 
             if (ModuleName == "PM2")
             {
@@ -770,21 +868,22 @@ namespace PKGSawKit_CleanerSystem
                             (GetDigValue((int)DigInputList.CH2_Door_Op_i) == "Off") &&
                             (GetDigValue((int)DigInputList.CH2_Door_Cl_i) == "On"))
                         {
-                            return true;
+                            bSolVv = true;
                         }
                         else
                         {
                             retMsg = "EMO switch is on or Door is open";
                             EventLog("[INTERLOCK#2] " + "EMO switch is on / Door is open", ModuleName, "Event");
-                            return false;
+
+                            bSolVv = false;
                         }
                     }
                     else
                     {
-                        return true;
+                        bSolVv = true;
                     }
                 }
-                
+
                 if (ioName == (int)DigOutputList.CH2_Door_Open_o)
                 {
                     if (setValue == (uint)DigitalOffOn.On)
@@ -799,19 +898,29 @@ namespace PKGSawKit_CleanerSystem
                             (digSet.curDigSet[(int)DigOutputList.CH2_WaterValve_5_o] == "Off") &&
                             (digSet.curDigSet[(int)DigOutputList.CH2_WaterAirValve_o] == "Off"))
                         {
-                            return true;
+                            bDoor = true;
                         }
                         else
                         {
                             retMsg = "Air or Water valve is open";
                             EventLog("[INTERLOCK#2] " + "Air or Water valve is open", ModuleName, "Event");
-                            return false;
+
+                            bDoor = false;
                         }
                     }
                     else
                     {
-                        return true;
+                        bDoor = true;
                     }
+                }
+
+                if ((bSolVv) && (bDoor))
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
 

@@ -754,6 +754,11 @@ namespace PKGSawKit_CleanerSystem
                 }
             }
 
+            if (Define.bManualLamp)
+                checkBox_ManualLamp.Checked = true;
+            else
+                checkBox_ManualLamp.Checked = false;
+
             // Daily count
             textBoxPM1DailyCnt.Text = Define.iPM1DailyCnt.ToString("00");
             textBoxPM2DailyCnt.Text = Define.iPM2DailyCnt.ToString("00");            
@@ -1075,6 +1080,34 @@ namespace PKGSawKit_CleanerSystem
                         Define.seqCtrl[Convert.ToByte(btn.Tag)] = Define.CTRL_ABORT;
                     }
                     break;
+            }
+        }
+
+        private void checkBox_ManualLamp_Click(object sender, EventArgs e)
+        {
+            if (checkBox_ManualLamp.Checked)
+                Define.bManualLamp = true;
+            else
+                Define.bManualLamp = false; 
+        }
+
+        private void Btn_Lamp_Click(object sender, EventArgs e)
+        {
+            if (Btn_Lamp.Tag.ToString() == "0")
+            {
+                Btn_Lamp.Tag = "1";
+                Btn_Lamp.Text = "ON";
+                Btn_Lamp.ForeColor = Color.Lime;
+
+                Global.SetDigValue((int)DigOutputList.FluorescentLamp_o, (uint)DigitalOffOn.On, "PM1");
+            }
+            else
+            {
+                Btn_Lamp.Tag = "0";
+                Btn_Lamp.Text = "OFF";
+                Btn_Lamp.ForeColor = Color.Red;
+
+                Global.SetDigValue((int)DigOutputList.FluorescentLamp_o, (uint)DigitalOffOn.Off, "PM1");
             }
         }
     }

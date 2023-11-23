@@ -102,19 +102,21 @@ namespace PKGSawKit_CleanerSystem
             this.PM1Water2_2 = new System.Windows.Forms.PictureBox();
             this.PM1_Door_Open = new System.Windows.Forms.Panel();
             this.PM2_Door_Close = new System.Windows.Forms.Panel();
+            this.PM2WaterAir5 = new System.Windows.Forms.PictureBox();
             this.PM2Air2 = new System.Windows.Forms.PictureBox();
+            this.PM2WaterAir4 = new System.Windows.Forms.PictureBox();
             this.PM2Air1 = new System.Windows.Forms.PictureBox();
+            this.PM2WaterAir3 = new System.Windows.Forms.PictureBox();
             this.PM2Water4 = new System.Windows.Forms.PictureBox();
+            this.PM2WaterAir2 = new System.Windows.Forms.PictureBox();
             this.PM2Water5 = new System.Windows.Forms.PictureBox();
+            this.PM2WaterAir1 = new System.Windows.Forms.PictureBox();
             this.PM2Water1 = new System.Windows.Forms.PictureBox();
             this.PM2Water2 = new System.Windows.Forms.PictureBox();
             this.PM2Water3 = new System.Windows.Forms.PictureBox();
             this.PM2_Door_Open = new System.Windows.Forms.Panel();
-            this.PM2WaterAir5 = new System.Windows.Forms.PictureBox();
-            this.PM2WaterAir4 = new System.Windows.Forms.PictureBox();
-            this.PM2WaterAir3 = new System.Windows.Forms.PictureBox();
-            this.PM2WaterAir2 = new System.Windows.Forms.PictureBox();
-            this.PM2WaterAir1 = new System.Windows.Forms.PictureBox();
+            this.checkBox_ManualLamp = new System.Windows.Forms.CheckBox();
+            this.Btn_Lamp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -128,18 +130,18 @@ namespace PKGSawKit_CleanerSystem
             ((System.ComponentModel.ISupportInitialize)(this.PM1Water1_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM1Water2_2)).BeginInit();
             this.PM2_Door_Close.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Air2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Air1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir1)).BeginInit();
             this.SuspendLayout();
             // 
             // displayTimer
@@ -914,9 +916,9 @@ namespace PKGSawKit_CleanerSystem
             this.PM1_Door_Close.BackColor = System.Drawing.Color.Transparent;
             this.PM1_Door_Close.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.BrushDoor_Close;
             this.PM1_Door_Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PM1_Door_Close.Controls.Add(this.labelBrushCleaning);
             this.PM1_Door_Close.Controls.Add(this.PM1BrushRotate2);
             this.PM1_Door_Close.Controls.Add(this.PM1BrushRotate1);
+            this.PM1_Door_Close.Controls.Add(this.labelBrushCleaning);
             this.PM1_Door_Close.Controls.Add(this.PM1Air2);
             this.PM1_Door_Close.Controls.Add(this.PM1Air1);
             this.PM1_Door_Close.Controls.Add(this.PM1Water2_1);
@@ -1062,6 +1064,17 @@ namespace PKGSawKit_CleanerSystem
             this.PM2_Door_Close.Size = new System.Drawing.Size(630, 390);
             this.PM2_Door_Close.TabIndex = 404;
             // 
+            // PM2WaterAir5
+            // 
+            this.PM2WaterAir5.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
+            this.PM2WaterAir5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PM2WaterAir5.Location = new System.Drawing.Point(500, 167);
+            this.PM2WaterAir5.Name = "PM2WaterAir5";
+            this.PM2WaterAir5.Size = new System.Drawing.Size(25, 25);
+            this.PM2WaterAir5.TabIndex = 473;
+            this.PM2WaterAir5.TabStop = false;
+            this.PM2WaterAir5.Visible = false;
+            // 
             // PM2Air2
             // 
             this.PM2Air2.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
@@ -1072,6 +1085,17 @@ namespace PKGSawKit_CleanerSystem
             this.PM2Air2.TabIndex = 427;
             this.PM2Air2.TabStop = false;
             this.PM2Air2.Visible = false;
+            // 
+            // PM2WaterAir4
+            // 
+            this.PM2WaterAir4.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
+            this.PM2WaterAir4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PM2WaterAir4.Location = new System.Drawing.Point(410, 167);
+            this.PM2WaterAir4.Name = "PM2WaterAir4";
+            this.PM2WaterAir4.Size = new System.Drawing.Size(25, 25);
+            this.PM2WaterAir4.TabIndex = 474;
+            this.PM2WaterAir4.TabStop = false;
+            this.PM2WaterAir4.Visible = false;
             // 
             // PM2Air1
             // 
@@ -1084,6 +1108,17 @@ namespace PKGSawKit_CleanerSystem
             this.PM2Air1.TabStop = false;
             this.PM2Air1.Visible = false;
             // 
+            // PM2WaterAir3
+            // 
+            this.PM2WaterAir3.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
+            this.PM2WaterAir3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PM2WaterAir3.Location = new System.Drawing.Point(315, 167);
+            this.PM2WaterAir3.Name = "PM2WaterAir3";
+            this.PM2WaterAir3.Size = new System.Drawing.Size(25, 25);
+            this.PM2WaterAir3.TabIndex = 475;
+            this.PM2WaterAir3.TabStop = false;
+            this.PM2WaterAir3.Visible = false;
+            // 
             // PM2Water4
             // 
             this.PM2Water4.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Water4;
@@ -1095,6 +1130,17 @@ namespace PKGSawKit_CleanerSystem
             this.PM2Water4.TabStop = false;
             this.PM2Water4.Visible = false;
             // 
+            // PM2WaterAir2
+            // 
+            this.PM2WaterAir2.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
+            this.PM2WaterAir2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PM2WaterAir2.Location = new System.Drawing.Point(212, 167);
+            this.PM2WaterAir2.Name = "PM2WaterAir2";
+            this.PM2WaterAir2.Size = new System.Drawing.Size(25, 25);
+            this.PM2WaterAir2.TabIndex = 476;
+            this.PM2WaterAir2.TabStop = false;
+            this.PM2WaterAir2.Visible = false;
+            // 
             // PM2Water5
             // 
             this.PM2Water5.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Water4;
@@ -1105,6 +1151,17 @@ namespace PKGSawKit_CleanerSystem
             this.PM2Water5.TabIndex = 424;
             this.PM2Water5.TabStop = false;
             this.PM2Water5.Visible = false;
+            // 
+            // PM2WaterAir1
+            // 
+            this.PM2WaterAir1.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
+            this.PM2WaterAir1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PM2WaterAir1.Location = new System.Drawing.Point(113, 167);
+            this.PM2WaterAir1.Name = "PM2WaterAir1";
+            this.PM2WaterAir1.Size = new System.Drawing.Size(25, 25);
+            this.PM2WaterAir1.TabIndex = 472;
+            this.PM2WaterAir1.TabStop = false;
+            this.PM2WaterAir1.Visible = false;
             // 
             // PM2Water1
             // 
@@ -1149,60 +1206,32 @@ namespace PKGSawKit_CleanerSystem
             this.PM2_Door_Open.Size = new System.Drawing.Size(630, 390);
             this.PM2_Door_Open.TabIndex = 403;
             // 
-            // PM2WaterAir5
+            // checkBox_ManualLamp
             // 
-            this.PM2WaterAir5.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
-            this.PM2WaterAir5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PM2WaterAir5.Location = new System.Drawing.Point(500, 167);
-            this.PM2WaterAir5.Name = "PM2WaterAir5";
-            this.PM2WaterAir5.Size = new System.Drawing.Size(25, 25);
-            this.PM2WaterAir5.TabIndex = 473;
-            this.PM2WaterAir5.TabStop = false;
-            this.PM2WaterAir5.Visible = false;
+            this.checkBox_ManualLamp.AutoSize = true;
+            this.checkBox_ManualLamp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox_ManualLamp.ForeColor = System.Drawing.Color.Blue;
+            this.checkBox_ManualLamp.Location = new System.Drawing.Point(975, 652);
+            this.checkBox_ManualLamp.Name = "checkBox_ManualLamp";
+            this.checkBox_ManualLamp.Size = new System.Drawing.Size(133, 25);
+            this.checkBox_ManualLamp.TabIndex = 472;
+            this.checkBox_ManualLamp.Text = "Manual Lamp";
+            this.checkBox_ManualLamp.UseVisualStyleBackColor = true;
+            this.checkBox_ManualLamp.Click += new System.EventHandler(this.checkBox_ManualLamp_Click);
             // 
-            // PM2WaterAir4
+            // Btn_Lamp
             // 
-            this.PM2WaterAir4.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
-            this.PM2WaterAir4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PM2WaterAir4.Location = new System.Drawing.Point(410, 167);
-            this.PM2WaterAir4.Name = "PM2WaterAir4";
-            this.PM2WaterAir4.Size = new System.Drawing.Size(25, 25);
-            this.PM2WaterAir4.TabIndex = 474;
-            this.PM2WaterAir4.TabStop = false;
-            this.PM2WaterAir4.Visible = false;
-            // 
-            // PM2WaterAir3
-            // 
-            this.PM2WaterAir3.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
-            this.PM2WaterAir3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PM2WaterAir3.Location = new System.Drawing.Point(315, 167);
-            this.PM2WaterAir3.Name = "PM2WaterAir3";
-            this.PM2WaterAir3.Size = new System.Drawing.Size(25, 25);
-            this.PM2WaterAir3.TabIndex = 475;
-            this.PM2WaterAir3.TabStop = false;
-            this.PM2WaterAir3.Visible = false;
-            // 
-            // PM2WaterAir2
-            // 
-            this.PM2WaterAir2.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
-            this.PM2WaterAir2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PM2WaterAir2.Location = new System.Drawing.Point(212, 167);
-            this.PM2WaterAir2.Name = "PM2WaterAir2";
-            this.PM2WaterAir2.Size = new System.Drawing.Size(25, 25);
-            this.PM2WaterAir2.TabIndex = 476;
-            this.PM2WaterAir2.TabStop = false;
-            this.PM2WaterAir2.Visible = false;
-            // 
-            // PM2WaterAir1
-            // 
-            this.PM2WaterAir1.BackgroundImage = global::PKGSawKit_CleanerSystem.Properties.Resources.Air4;
-            this.PM2WaterAir1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PM2WaterAir1.Location = new System.Drawing.Point(113, 167);
-            this.PM2WaterAir1.Name = "PM2WaterAir1";
-            this.PM2WaterAir1.Size = new System.Drawing.Size(25, 25);
-            this.PM2WaterAir1.TabIndex = 472;
-            this.PM2WaterAir1.TabStop = false;
-            this.PM2WaterAir1.Visible = false;
+            this.Btn_Lamp.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.Btn_Lamp.Font = new System.Drawing.Font("Nirmala UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Btn_Lamp.ForeColor = System.Drawing.Color.Red;
+            this.Btn_Lamp.Location = new System.Drawing.Point(975, 691);
+            this.Btn_Lamp.Name = "Btn_Lamp";
+            this.Btn_Lamp.Size = new System.Drawing.Size(133, 63);
+            this.Btn_Lamp.TabIndex = 473;
+            this.Btn_Lamp.Tag = "0";
+            this.Btn_Lamp.Text = "OFF";
+            this.Btn_Lamp.UseVisualStyleBackColor = true;
+            this.Btn_Lamp.Click += new System.EventHandler(this.Btn_Lamp_Click);
             // 
             // OperationForm
             // 
@@ -1210,6 +1239,8 @@ namespace PKGSawKit_CleanerSystem
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1172, 824);
+            this.Controls.Add(this.Btn_Lamp);
+            this.Controls.Add(this.checkBox_ManualLamp);
             this.Controls.Add(this.PM2_Door_Close);
             this.Controls.Add(this.PM1_Door_Close);
             this.Controls.Add(this.panel1);
@@ -1270,18 +1301,18 @@ namespace PKGSawKit_CleanerSystem
             ((System.ComponentModel.ISupportInitialize)(this.PM1Water1_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM1Water2_2)).EndInit();
             this.PM2_Door_Close.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Air2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Air1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PM2Water3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PM2WaterAir1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1373,5 +1404,7 @@ namespace PKGSawKit_CleanerSystem
         private System.Windows.Forms.PictureBox PM2WaterAir3;
         private System.Windows.Forms.PictureBox PM2WaterAir2;
         private System.Windows.Forms.PictureBox PM2WaterAir1;
+        private System.Windows.Forms.CheckBox checkBox_ManualLamp;
+        private System.Windows.Forms.Button Btn_Lamp;
     }
 }

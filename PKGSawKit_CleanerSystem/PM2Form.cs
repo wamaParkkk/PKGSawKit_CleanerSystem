@@ -153,7 +153,7 @@ namespace PKGSawKit_CleanerSystem
                 {
                     btnProcess.Enabled = true;
 
-                    //HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Idle");
+                    HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Idle");
                 }
 
                 if (btnProcess.BackColor != Color.Transparent)
@@ -782,34 +782,7 @@ namespace PKGSawKit_CleanerSystem
             switch (strTmp)
             {
                 case "Start":
-                    {
-                        if (!Define.bInterlockRelease)
-                        {
-                            if (Global.GetDigValue((int)DigInputList.Front_Door_Sensor_i) == "Off")
-                            {
-                                MessageBox.Show("Front door가 열려 있습니다", "알림");
-                                return;
-                            }
-
-                            if (Global.GetDigValue((int)DigInputList.Left_Door_Sensor_i) == "Off")
-                            {
-                                MessageBox.Show("Left door가 열려 있습니다", "알림");
-                                return;
-                            }
-
-                            if (Global.GetDigValue((int)DigInputList.Right_Door_Sensor_i) == "Off")
-                            {
-                                MessageBox.Show("Right door가 열려 있습니다", "알림");
-                                return;
-                            }
-
-                            if (Global.GetDigValue((int)DigInputList.Back_Door_Sensor_i) == "Off")
-                            {
-                                MessageBox.Show("Back door가 열려 있습니다", "알림");
-                                return;
-                            }
-                        }
-
+                    {                        
                         if (MessageBox.Show("공정을 진행 하겠습니까?", "알림", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                         {
                             Define.iSelectRecipeModule = module;
@@ -818,6 +791,33 @@ namespace PKGSawKit_CleanerSystem
 
                             if (recipeSelectForm.ShowDialog() == DialogResult.OK)
                             {
+                                if (!Define.bInterlockRelease)
+                                {
+                                    if (Global.GetDigValue((int)DigInputList.Front_Door_Sensor_i) == "Off")
+                                    {
+                                        MessageBox.Show("Front door가 열려 있습니다", "알림");
+                                        return;
+                                    }
+
+                                    if (Global.GetDigValue((int)DigInputList.Left_Door_Sensor_i) == "Off")
+                                    {
+                                        MessageBox.Show("Left door가 열려 있습니다", "알림");
+                                        return;
+                                    }
+
+                                    if (Global.GetDigValue((int)DigInputList.Right_Door_Sensor_i) == "Off")
+                                    {
+                                        MessageBox.Show("Right door가 열려 있습니다", "알림");
+                                        return;
+                                    }
+
+                                    if (Global.GetDigValue((int)DigInputList.Back_Door_Sensor_i) == "Off")
+                                    {
+                                        MessageBox.Show("Back door가 열려 있습니다", "알림");
+                                        return;
+                                    }
+                                }
+
                                 Define.seqMode[module] = Define.MODE_PROCESS;
                                 Define.seqCtrl[module] = Define.CTRL_RUN;
                                 Define.seqSts[module] = Define.STS_IDLE;

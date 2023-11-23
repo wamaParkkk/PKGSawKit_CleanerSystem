@@ -69,12 +69,13 @@ namespace PKGSawKit_CleanerSystem
             this.btnCH2Module = new System.Windows.Forms.Button();
             this.btnCH1Module = new System.Windows.Forms.Button();
             this.panelOption = new System.Windows.Forms.Panel();
+            this.label_SeqStep2 = new System.Windows.Forms.Label();
+            this.label_SeqStep1 = new System.Windows.Forms.Label();
             this.checkBoxSimulation = new System.Windows.Forms.CheckBox();
             this.checkBoxInterlockRelease = new System.Windows.Forms.CheckBox();
             this.simulationTimer = new System.Windows.Forms.Timer(this.components);
             this.panel6 = new System.Windows.Forms.Panel();
-            this.label_SeqStep1 = new System.Windows.Forms.Label();
-            this.label_SeqStep2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -124,6 +125,7 @@ namespace PKGSawKit_CleanerSystem
             this.panel5.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.panel5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel5.BackgroundImage")));
             this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.pictureBoxAlarm);
             this.panel5.Controls.Add(this.pictureBoxAlarm2);
             this.panel5.Controls.Add(this.labelInterlockEnaDis);
@@ -176,7 +178,7 @@ namespace PKGSawKit_CleanerSystem
             this.labelInterlockEnaDis.ForeColor = System.Drawing.Color.Yellow;
             this.labelInterlockEnaDis.Location = new System.Drawing.Point(53, 67);
             this.labelInterlockEnaDis.Name = "labelInterlockEnaDis";
-            this.labelInterlockEnaDis.Size = new System.Drawing.Size(174, 32);
+            this.labelInterlockEnaDis.Size = new System.Drawing.Size(173, 32);
             this.labelInterlockEnaDis.TabIndex = 157;
             this.labelInterlockEnaDis.Text = "인터락 해제중!";
             this.labelInterlockEnaDis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -632,6 +634,24 @@ namespace PKGSawKit_CleanerSystem
             this.panelOption.TabIndex = 154;
             this.panelOption.Visible = false;
             // 
+            // label_SeqStep2
+            // 
+            this.label_SeqStep2.AutoSize = true;
+            this.label_SeqStep2.Location = new System.Drawing.Point(86, 107);
+            this.label_SeqStep2.Name = "label_SeqStep2";
+            this.label_SeqStep2.Size = new System.Drawing.Size(17, 12);
+            this.label_SeqStep2.TabIndex = 496;
+            this.label_SeqStep2.Text = "--";
+            // 
+            // label_SeqStep1
+            // 
+            this.label_SeqStep1.AutoSize = true;
+            this.label_SeqStep1.Location = new System.Drawing.Point(14, 107);
+            this.label_SeqStep1.Name = "label_SeqStep1";
+            this.label_SeqStep1.Size = new System.Drawing.Size(17, 12);
+            this.label_SeqStep1.TabIndex = 495;
+            this.label_SeqStep1.Text = "--";
+            // 
             // checkBoxSimulation
             // 
             this.checkBoxSimulation.AutoSize = true;
@@ -673,23 +693,20 @@ namespace PKGSawKit_CleanerSystem
             this.panel6.Size = new System.Drawing.Size(22, 824);
             this.panel6.TabIndex = 39;
             // 
-            // label_SeqStep1
+            // button1
             // 
-            this.label_SeqStep1.AutoSize = true;
-            this.label_SeqStep1.Location = new System.Drawing.Point(14, 107);
-            this.label_SeqStep1.Name = "label_SeqStep1";
-            this.label_SeqStep1.Size = new System.Drawing.Size(17, 12);
-            this.label_SeqStep1.TabIndex = 495;
-            this.label_SeqStep1.Text = "--";
-            // 
-            // label_SeqStep2
-            // 
-            this.label_SeqStep2.AutoSize = true;
-            this.label_SeqStep2.Location = new System.Drawing.Point(86, 107);
-            this.label_SeqStep2.Name = "label_SeqStep2";
-            this.label_SeqStep2.Size = new System.Drawing.Size(17, 12);
-            this.label_SeqStep2.TabIndex = 496;
-            this.label_SeqStep2.Text = "--";
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Lime;
+            this.button1.Location = new System.Drawing.Point(296, 25);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(69, 50);
+            this.button1.TabIndex = 160;
+            this.button1.Text = "Buzzer\r\noff";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.pictureBoxAlarm_Click);
             // 
             // MainForm
             // 
@@ -780,5 +797,6 @@ namespace PKGSawKit_CleanerSystem
         private System.Windows.Forms.PictureBox pictureBoxAlarm2;
         private System.Windows.Forms.Label label_SeqStep1;
         private System.Windows.Forms.Label label_SeqStep2;
+        private System.Windows.Forms.Button button1;
     }
 }

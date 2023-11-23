@@ -114,8 +114,8 @@ namespace PKGSawKit_CleanerSystem.Squence
 
             Global.EventLog(almId + ":" + Define.sAlarmName, ModuleName, "Alarm");
 
-            //HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Alarm");
-            //HostConnection.Host_Set_AlarmName(Global.hostEquipmentInfo, ModuleName, Define.sAlarmName);
+            HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Alarm");
+            HostConnection.Host_Set_AlarmName(Global.hostEquipmentInfo, ModuleName, Define.sAlarmName);
         }
 
         public void F_INC_STEP()
@@ -190,7 +190,7 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                     case 6:
                         {
-                            P_CYLINDER_StepCheck(1);
+                            P_CYLINDER_StepCheck(2);
                         }
                         break;                    
                 }
@@ -247,6 +247,8 @@ namespace PKGSawKit_CleanerSystem.Squence
                 MotionClass.SetMotorDecel(Define.axis_y, Configure_List.WaterBlock_Move_Speed * 2);
                 MotionClass.SetMotorGearing(Define.axis_y, 1);
 
+                Thread.Sleep(500);
+
                 if (FwdBwd == "Forward")
                 {
                     if ((MotionClass.motor[Define.axis_y].sR_HomeStatus == "+Limit") &&
@@ -257,8 +259,8 @@ namespace PKGSawKit_CleanerSystem.Squence
                     else
                     {                                                
                         if (Global.MOTION_INTERLOCK_CHECK())
-                        {
-                            MotionClass.MotorMove(Define.axis_y, Configure_List.WaterBlock_Fwd_Position);
+                        {                            
+                            MotionClass.MotorMove(Define.axis_y, Configure_List.WaterBlock_Fwd_Position);                            
                         }
                         
                         step.Flag = false;
@@ -275,7 +277,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                     else
                     {                                               
                         if (Global.MOTION_INTERLOCK_CHECK())
-                        {
+                        {                                                        
                             MotionClass.MotorMove(Define.axis_y, Configure_List.WaterBlock_Bwd_Position);
                         }                        
 
@@ -361,15 +363,11 @@ namespace PKGSawKit_CleanerSystem.Squence
         {
             if (step.Flag)
             {
-                if (Define.bHomeFlag)
-                {
-                    F_INC_STEP();
-                }
-                else
+                if (Define.seqCylinderMode[module] == Define.MODE_CYLINDER_HOME)
                 {
                     MotionClass.SetMotorSStop(Define.axis_y);
 
-                    Thread.Sleep(500);
+                    Thread.Sleep(1000);
 
                     if (Global.MOTION_INTERLOCK_CHECK())
                     {
@@ -380,7 +378,30 @@ namespace PKGSawKit_CleanerSystem.Squence
                     step.Times = 1;
 
                     nHomeCnt = 0;
-                }                
+                }
+                else
+                {
+                    if (Define.bHomeFlag)
+                    {
+                        F_INC_STEP();
+                    }
+                    else
+                    {
+                        MotionClass.SetMotorSStop(Define.axis_y);
+
+                        Thread.Sleep(1000);
+
+                        if (Global.MOTION_INTERLOCK_CHECK())
+                        {
+                            MotionClass.SetMotorHome(Define.axis_y);
+                        }
+
+                        step.Flag = false;
+                        step.Times = 1;
+
+                        nHomeCnt = 0;
+                    }
+                }                                
             }
             else
             {

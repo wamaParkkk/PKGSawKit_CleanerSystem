@@ -166,8 +166,8 @@ namespace PKGSawKit_CleanerSystem.Squence
 
             Global.EventLog(almId + ":" + Define.sAlarmName, ModuleName, "Alarm");
 
-            //HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Alarm");
-            //HostConnection.Host_Set_AlarmName(Global.hostEquipmentInfo, ModuleName, Define.sAlarmName);
+            HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Alarm");
+            HostConnection.Host_Set_AlarmName(Global.hostEquipmentInfo, ModuleName, Define.sAlarmName);
         }
 
         public void F_INC_STEP()
@@ -217,8 +217,8 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                 Global.EventLog("START THE PROCESS.", ModuleName, "Event");
 
-                //HostConnection.Host_Set_ProcessEndTime(Global.hostEquipmentInfo, ModuleName, "");
-                //HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Process");
+                HostConnection.Host_Set_ProcessEndTime(Global.hostEquipmentInfo, ModuleName, "");
+                HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Process");
             }
             else if ((Define.seqMode[module] == Define.MODE_PROCESS) && (Define.seqCtrl[module] == Define.CTRL_RUNNING))
             {
@@ -450,7 +450,7 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                 Global.EventLog("START THE INITIALIZE.", ModuleName, "Event");
 
-                //HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Init");
+                HostConnection.Host_Set_RunStatus(Global.hostEquipmentInfo, ModuleName, "Init");
             }
             else if ((Define.seqMode[module] == Define.MODE_INIT) && (Define.seqCtrl[module] == Define.CTRL_RUNNING))
             {
@@ -521,13 +521,14 @@ namespace PKGSawKit_CleanerSystem.Squence
                 {
                     Global.SetDigValue((int)DigOutputList.CH1_Door_Open_o, (uint)DigitalOffOn.On, ModuleName);
                     Global.SetDigValue((int)DigOutputList.CH1_Door_Close_o, (uint)DigitalOffOn.Off, ModuleName);
+
                 }
                 else if (OpCl == "Close")
                 {
                     Global.SetDigValue((int)DigOutputList.CH1_Door_Open_o, (uint)DigitalOffOn.Off, ModuleName);
-                    Global.SetDigValue((int)DigOutputList.CH1_Door_Close_o, (uint)DigitalOffOn.On, ModuleName);
+                    Global.SetDigValue((int)DigOutputList.CH1_Door_Close_o, (uint)DigitalOffOn.On, ModuleName);                    
                 }
-                
+
                 step.Flag = false;
                 step.Times = 1;
             }
@@ -595,7 +596,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 {
                     ImportExcelData_Read(FileName);
 
-                    prcsRecipe.StepNum = 1; // Recipe 현재 스탭 초기화
+                    prcsRecipe.StepNum= 1; // Recipe 현재 스탭 초기화
                    
                     Global.EventLog("Recipe file was successfully read.", ModuleName, "Event");
 
@@ -603,7 +604,7 @@ namespace PKGSawKit_CleanerSystem.Squence
 
                     Global.EventLog("Recipe name : " + Global.prcsInfo.prcsRecipeName[module], ModuleName, "Event");
 
-                    //HostConnection.Host_Set_RecipeName(Global.hostEquipmentInfo, ModuleName, Global.prcsInfo.prcsRecipeName[module]);
+                    HostConnection.Host_Set_RecipeName(Global.hostEquipmentInfo, ModuleName, Global.prcsInfo.prcsRecipeName[module]);
 
                     F_INC_STEP();
                 }
@@ -753,6 +754,8 @@ namespace PKGSawKit_CleanerSystem.Squence
                     
                     Thread.Sleep(500);
 
+                    bBrushUseCheck = false;
+
                     step.Flag = true;
                     step.Layer = nStep2;
                 }
@@ -775,7 +778,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 string strProgressTime = string.Format("{0}/{1}",
                         Global.prcsInfo.prcsCurrentStep[module].ToString(), Global.prcsInfo.prcsTotalStep[module].ToString());
 
-                //HostConnection.Host_Set_ProgressTime(Global.hostEquipmentInfo, ModuleName, strProgressTime);
+                HostConnection.Host_Set_ProgressTime(Global.hostEquipmentInfo, ModuleName, strProgressTime);
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 step.Flag = false;
@@ -1068,7 +1071,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                         Define.seqBrushFwBwMode = Define.MODE_BRUSH_FWBW_RUN;
                         Define.seqBrushFwBwCtrl = Define.CTRL_RUN;
                         Define.seqBrushFwBwSts = Define.STS_BRUSH_FWBW_IDLE;                        
-                    }
+                    }                    
                 }
                 else if (sAction == "Home")
                 {                    
@@ -1082,7 +1085,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                     {
                         Define.seqBrushFwBwMode = Define.MODE_BRUSH_FWBW_CLEAN;
                         Define.seqBrushFwBwCtrl = Define.CTRL_RUN;
-                        Define.seqBrushFwBwSts = Define.STS_BRUSH_FWBW_IDLE;
+                        Define.seqBrushFwBwSts = Define.STS_BRUSH_FWBW_IDLE;                        
                     }                    
                 }
 
@@ -1144,7 +1147,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 string strProgressTime = string.Format("{0}/{1}",
                         Global.prcsInfo.prcsCurrentStep[module].ToString(), Global.prcsInfo.prcsTotalStep[module].ToString());
 
-                //HostConnection.Host_Set_ProgressTime(Global.hostEquipmentInfo, ModuleName, strProgressTime);
+                HostConnection.Host_Set_ProgressTime(Global.hostEquipmentInfo, ModuleName, strProgressTime);
                 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
                 // Air
@@ -1269,7 +1272,7 @@ namespace PKGSawKit_CleanerSystem.Squence
             else
             {
                 if (prcsRecipe.StepNum >= prcsRecipe.TotalStep)
-                {                    
+                {                                    
                     F_PROCESS_ALL_VALVE_CLOSE();                    
 
                     F_INC_STEP();                    
@@ -1293,14 +1296,14 @@ namespace PKGSawKit_CleanerSystem.Squence
         private void P_PROCESS_ProcessEnd()
         {
             Global.prcsInfo.prcsEndTime[module] = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            //HostConnection.Host_Set_ProcessEndTime(Global.hostEquipmentInfo, ModuleName, Global.prcsInfo.prcsEndTime[module]);
+            HostConnection.Host_Set_ProcessEndTime(Global.hostEquipmentInfo, ModuleName, Global.prcsInfo.prcsEndTime[module]);
 
             Define.seqMode[module] = Define.MODE_IDLE;
             Define.seqCtrl[module] = Define.CTRL_IDLE;
             Define.seqSts[module] = Define.STS_PROCESS_END;            
 
             // Process end buzzer
-            Global.SetDigValue((int)DigOutputList.Buzzer_o, (uint)DigitalOffOn.On, ModuleName);
+            //Global.SetDigValue((int)DigOutputList.Buzzer_o, (uint)DigitalOffOn.On, ModuleName);
 
             Global.EventLog("PROCESS COMPLETED.", ModuleName, "Event");            
 
@@ -1338,9 +1341,7 @@ namespace PKGSawKit_CleanerSystem.Squence
         private void F_DAILY_COUNT()
         {            
             Define.iPM1DailyCnt++;
-            Global.DailyLog(Define.iPM1DailyCnt, ModuleName);
-
-            //HostConnection.Host_Set_DailyCount(Global.hostEquipmentInfo, ModuleName, Define.iPM1DailyCnt.ToString("00"));
+            Global.DailyLog(Define.iPM1DailyCnt, ModuleName);            
         }
         #endregion
 
