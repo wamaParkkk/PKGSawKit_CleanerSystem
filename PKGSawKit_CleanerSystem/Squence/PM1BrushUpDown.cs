@@ -250,7 +250,9 @@ namespace PKGSawKit_CleanerSystem.Squence
         {
             if (step.Flag)
             {
-                if (Define.bBrushHomeFlag)
+                //if (Define.bBrushHomeFlag)
+                if ((MotionClass.motor[Define.axis_z].sR_HomeStatus == "Home") &&
+                    (MotionClass.motor[Define.axis_z].sR_BusyStatus == "Ready"))
                 {
                     F_INC_STEP();
                 }

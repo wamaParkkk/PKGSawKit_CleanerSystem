@@ -283,7 +283,7 @@ namespace PKGSawKit_CleanerSystem
                                 strCopyName += ".csv";
                             }
                             
-                            RecipePath = string.Format("{0}PM1\\");
+                            RecipePath = string.Format("{0}PM1\\", Global.RecipeFilePath);
 
                             strFileName = RecipePath + strFileName;
                             strCopyName = RecipePath + strCopyName;

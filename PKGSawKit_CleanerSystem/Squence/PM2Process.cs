@@ -3,6 +3,7 @@ using System;
 using System.IO;
 using System.Threading;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace PKGSawKit_CleanerSystem.Squence
 {
@@ -273,7 +274,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                         break;
 
                     case 10:
-                        {
+                        {                            
                             P_Cylinder_FwdBwd_Seq("Home");
                         }
                         break;
@@ -742,7 +743,7 @@ namespace PKGSawKit_CleanerSystem.Squence
                 }
                 else
                 {
-                    if (step.Times > 3)
+                    if (step.Times > 1)
                     {
                         if ((Define.seqCylinderCtrl[module] == Define.CTRL_IDLE) &&
                             (Define.seqCylinderSts[module] == Define.STS_CYLINDER_HOMEEND))
